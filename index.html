@@ -206,17 +206,49 @@
     .invite-text::after  { content: ''; }
 
     @media (max-width: 768px) {
-      /* Zoom in 30% so sky gets cropped; anchor to bottom to keep couple visible */
+      /* ── Hero: show photo as-is (user pre-cropped it), push text up ── */
       .hero {
-        background-size: auto 130%;
-        background-position: 50% 100%;
+        background-size: cover;
+        background-position: center;
+        padding-top: 0;
+        padding-bottom: 7rem;
       }
-      /* Stronger shadow so scroll-hint is readable without background */
+
+      /* ── Hero text: larger + bolder ── */
+      .hero-names {
+        font-size: clamp(4rem, 18vw, 6.5rem);
+        font-weight: 400;
+      }
+      .hero-year {
+        font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+        font-weight: 400;
+        letter-spacing: .5rem;
+      }
+      .hero-rings { width: 66px; height: 36px; }
+
+      /* ── Scroll-hint: stronger shadow, no background ── */
       .scroll-hint {
-        text-shadow: 0 1px 8px rgba(250,246,240,1), 0 0 16px rgba(250,246,240,.9);
+        font-size: .85rem;
         font-weight: 600;
-        color: var(--dark);
+        text-shadow: 0 1px 8px rgba(250,246,240,1), 0 0 16px rgba(250,246,240,.9);
       }
+
+      /* ── Body text: heavier weight ── */
+      body { font-weight: 400; }
+
+      /* ── Section text sizes ── */
+      .section-label    { font-size: .9rem; letter-spacing: .25rem; }
+      .detail-title     { font-size: 1.5rem; }
+      .detail-value     { font-size: 1rem; line-height: 1.9; }
+      .countdown-label  { font-size: .8rem; letter-spacing: .18rem; }
+      .countdown-num    { font-size: clamp(3.5rem, 11vw, 6rem); }
+      .invite-text      { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+      .dresscode-title  { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+      .dresscode-sub    { font-size: .85rem; }
+      .rozetka-text     { font-size: 1rem; }
+      .rozetka-btn      { font-size: .85rem; padding: .9rem 2.5rem; }
+      .signature        { font-size: clamp(2.8rem, 9vw, 5rem); }
+      .signature-note   { font-size: 1rem; }
     }
 
     @media (max-width: 480px) {
